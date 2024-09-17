@@ -1,7 +1,7 @@
 export const products = [
     {
       id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
-      image: "",
+      image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product1.jpeg",
       name: "Banana Blossom Vegan Meat 400gm",
       rating: {
         stars: 4,
@@ -12,7 +12,7 @@ export const products = [
     },
     {
       id: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
-      image: "",
+      image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product2.jpeg",
       name: "Fresh Carrot Juice 800ml 1-Serving",
       rating: {
         stars: 5,
@@ -23,7 +23,7 @@ export const products = [
     },
     {
       id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
-      image: "",
+      image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product3.jpeg",
       name: "Organic Leafy Carrots 2kg",
       rating: {
         stars: 4,
@@ -34,7 +34,7 @@ export const products = [
     },
     {
       id: "54e0eccd-8f36-462b-b68a-8182611d9add",
-      image: "",
+      image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product4.jpeg",
       name: "Nutritious Mixed Fruits Drink 4-pack",
       rating: {
         stars: 5,
@@ -45,7 +45,7 @@ export const products = [
     },
     {
       id: "3ebe75dc-64d2-4137-8860-1f5a963e534b",
-      image: "",
+      image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product5.jpeg",
       name: "Juicy Watermelon",
       rating: {
         stars: 4.5,
@@ -56,7 +56,7 @@ export const products = [
     },
     {
       id: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
-      image: "",
+      image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product6.jpeg",
       name: "Fresh Breads",
       rating: {
         stars: 3.5,
@@ -67,7 +67,7 @@ export const products = [
     },
     {
       id: "dd82ca78-a18b-4e2a-9250-31e67412f98d",
-      image: "",
+      image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product7.jpeg",
       name: "Sun Warrior Protein Blend",
       rating: {
         stars: 4,
@@ -78,7 +78,7 @@ export const products = [
     },
     {
       id: "77919bbe-0e56-475b-adde-4f24dfed3a04",
-      image: "",
+      image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product8.jpeg",
       name: "Delicious Red Pomegranates 1kg",
       rating: {
         stars: 4,
@@ -89,7 +89,7 @@ export const products = [
     },
     {
       id: "3fdfe8d6-9a15-4979-b459-585b0d0545b9",
-      image: "",
+      image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product9.jpeg",
       name: "Juicy Leafy Oranges 2kg",
       rating: {
         stars: 5,
@@ -100,7 +100,7 @@ export const products = [
     },
     {
       id: "58b4fc92-e98c-42aa-8c55-b6b79996769a",
-      image: "",
+      image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product10.jpeg",
       name: "Nutritious Broccoli",
       rating: {
         stars: 4,
@@ -111,7 +111,7 @@ export const products = [
     },
     {
       id: "5968897c-4d27-4872-89f6-5bcb052746d7",
-      image: "",
+      image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product11.jpeg",
       name: "Organic Onions",
       rating: {
         stars: 5,
@@ -122,7 +122,7 @@ export const products = [
     },
     {
       id: "aad29d11-ea98-41ee-9285-b916638cac4a",
-      image: "",
+      image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product12.jpeg",
       name: "Bolognese Tofu Sauce",
       rating: {
         stars: 5,
@@ -133,7 +133,7 @@ export const products = [
     },
     {
       id: "04701903-bc79-49c6-bc11-1af7e3651358",
-      image: "",
+      image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product13.jpeg",
       name: "Organic Tomatoes - Perfect for Salads and Sauces",
       rating: {
         stars: 3,
@@ -144,7 +144,7 @@ export const products = [
     },
     {
       id: "901eb2ca-386d-432e-82f0-6fb1ee7bf969",
-      image: "",
+      image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product14.jpeg",
       name: "Mixed Kiwi Broccoli and Guava Juice",
       rating: {
         stars: 5,
@@ -155,7 +155,7 @@ export const products = [
     },
     {
       id: "82bb68d7-ebc9-476a-989c-c78a40ee5cd9",
-      image: "",
+      image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product15.jpeg",
       name: "Fresh Crisp Apples - Nature Perfect Snack",
       rating: {
         stars: 3,
