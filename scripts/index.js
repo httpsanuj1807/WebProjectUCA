@@ -1,6 +1,9 @@
 import productsData from "../data/products.js";
+import { addToCart, getCartQuantity } from "./cart.js";
 
 
+// refresh quantity on load
+updateCartQuantity();
 
 // generating products HTML to show products on page
 
@@ -62,3 +65,54 @@ productsData.forEach((product) => {
 
 const productsGridElement = document.querySelector('.js-products-grid');
 productsGridElement.innerHTML = html;
+
+
+
+// add to cart button functionality
+
+const addToCartButtonElements = document.querySelectorAll(".js-add-to-cart-button");
+
+addToCartButtonElements.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        // get the product id of the click product
+        const productId = button.dataset.productId;
+
+        // get the select value of the click select element using the productID
+        const selectElement = document.querySelector(`.js-select-${productId}`);
+
+        const quantity = selectElement.value;
+
+        // add 'added to cart image'
+
+        const addImgElement = document.querySelector(`.js-added-to-cart-${productId}`);
+
+        // adding class for opacity 1
+
+        addImgElement.classList.add('js-added-to-cart');
+
+        // placing a timer to remove added image
+
+        const myTimeout = setTimeout(() => {
+
+            addImgElement.classList.remove('js-added-to-cart');
+
+        }, 2000);
+
+        addToCart(productId, quantity);
+        updateCartQuantity();
+
+    });
+
+});
+
+// refresh quantity after getting it from cart 
+
+function updateCartQuantity(){
+
+    const quantity = getCartQuantity();
+    const quantityElement = document.querySelector(".js-cart-quantity");
+    quantityElement.innerHTML = quantity;
+
+}

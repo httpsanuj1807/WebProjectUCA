@@ -1,0 +1,74 @@
+// fetching cart from local storage if already exists
+
+let cart = JSON.parse(localStorage.getItem("cart"));
+
+//  if not exist then setting an empty array instead
+
+if(!cart){
+
+    cart = []; // an empty cart
+    saveInLocalStorage();
+
+}
+
+function saveInLocalStorage(){
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+}
+
+
+// add to cart function
+
+export function addToCart(productId, quantity){
+
+    // looking if the product is already in the cart
+    let flag = false;
+
+    cart.forEach((cartItem) => {
+
+        if(cartItem.productId === productId){
+
+            flag = true;
+            cartItem.quantity += Number(quantity);
+
+        }
+
+    });
+
+    // if not present then create a obj and push into cart
+    if(!flag){
+
+        const cartItem = {
+
+            productId,
+            quantity : Number(quantity),
+            deliveryId : "7"
+
+        }
+
+        cart.push(cartItem);
+
+    }
+
+    // saving in cart
+    saveInLocalStorage();
+
+}
+
+
+// function to return the current total count of cart
+
+export function getCartQuantity(){
+
+    let count = 0;
+
+    cart.forEach((cartItem) => {
+
+        count += cartItem.quantity;
+
+    });
+
+    return count;
+
+}
