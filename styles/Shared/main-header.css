@@ -90,7 +90,6 @@
 
   .search-button:hover {
     background-color: #8a9a1f;
-    cursor: pointer;
   }
   
   .search-icon {
@@ -128,7 +127,6 @@
   
   .orders-link {
     color: #0a472e;
-    font-family: "Roboto", sans-serif;
   }
 
   
@@ -146,7 +144,6 @@
   
   .cart-link {
     color: #0a472e;
-    font-family: "Roboto", sans-serif;
     display: flex;
     align-items: center;
     position: relative;

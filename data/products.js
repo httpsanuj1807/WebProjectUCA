@@ -1,4 +1,4 @@
-export const products = [
+const products = [
     {
       id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
       image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product1.jpeg",
@@ -48,7 +48,7 @@ export const products = [
       image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product5.jpeg",
       name: "Juicy Watermelon",
       rating: {
-        stars: 4.5,
+        stars: 4,
         count: 37
       },
       priceCents: 6508,
@@ -59,7 +59,7 @@ export const products = [
       image: "https://uca-project-images.s3.ap-south-1.amazonaws.com/product6.jpeg",
       name: "Fresh Breads",
       rating: {
-        stars: 3.5,
+        stars: 3,
         count: 175
       },
       priceCents: 5121,
@@ -166,3 +166,4 @@ export const products = [
     }
   ]
   
+  export default products;
