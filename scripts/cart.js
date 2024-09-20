@@ -57,6 +57,68 @@ export function addToCart(productId, quantity){
 }
 
 
+
+// fucntion to delete any cart item 
+
+export function deleteFromCart(productId){
+
+    let updatedCart = [];
+    cart.forEach((cartItem) => {
+
+        if(cartItem.productId != productId){
+            updatedCart.push(cartItem);
+        }
+
+    });
+
+    cart = updatedCart;
+    saveInLocalStorage();
+
+}   
+
+// update cart item quantity from checkout page update button
+
+export function updateCartQuantity(productId, newQuantity){
+
+
+    cart.forEach((cartItem) => {
+
+
+        if(cartItem.productId === productId){
+
+            cartItem.quantity = Number(newQuantity);
+
+        }
+
+    });
+
+    saveInLocalStorage;
+
+}
+
+
+
+// update delivery id of any cart item from checkout page delivery options
+
+export function updateDeliveryId(productId, newDeliveryId){
+
+
+    cart.forEach((cartItem) => {
+
+        if(cartItem.productId === productId){
+
+
+            cartItem.deliveryId = newDeliveryId;
+
+        }
+
+    });
+
+    saveInLocalStorage();
+
+}
+
+
 // function to return the current total count of cart
 
 export function getCartQuantity(){
