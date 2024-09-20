@@ -92,7 +92,7 @@ export function updateCartQuantity(productId, newQuantity){
 
     });
 
-    saveInLocalStorage;
+    saveInLocalStorage();
 
 }
 

@@ -24,7 +24,28 @@
     font-size: 22px;
     margin-top: 4px;
   }
-  
+
+  .empty-cart-img, .shop-now-btn-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .shop-now-btn{
+
+    
+      width: 20%;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      border-radius: 8px;
+    
+      margin-top: 11px;
+      margin-bottom: 15px;
+    
+
+  }
+
   .checkout-grid {
     display: grid;
     grid-template-columns: 1fr 350px;
