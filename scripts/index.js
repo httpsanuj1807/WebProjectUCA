@@ -1,5 +1,6 @@
 import productsData from "../data/products.js";
 import { addToCart, getCartQuantity } from "./cart.js";
+import { centsToActual } from "./utils/money.js";
 
 
 // refresh quantity on load
@@ -29,7 +30,7 @@ productsData.forEach((product) => {
     </div>
 
     <div class="product-price">
-    $${(product.priceCents / 100).toFixed(2)}
+    $${centsToActual(product.priceCents)}
     </div>
 
     <div class="product-quantity-container">

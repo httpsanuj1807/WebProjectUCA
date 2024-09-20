@@ -1,6 +1,6 @@
 // fetching cart from local storage if already exists
 
-let cart = JSON.parse(localStorage.getItem("cart"));
+export let cart = JSON.parse(localStorage.getItem("cart"));
 
 //  if not exist then setting an empty array instead
 
