@@ -70,12 +70,12 @@ body {
   }
   
   .link-primary {
-    color: rgb(1, 124, 182);
+    color: #017cb6;
     cursor: pointer;
   }
   
   .link-primary:hover {
-    color: rgb(196, 80, 0);
+    color: #015c86;
   }
   
   /* Styles for dropdown selectors. */
