@@ -100,7 +100,7 @@
   }
   
   .product-price {
-    color: rgb(177, 39, 4);
+    color: #b12704;
     font-weight: 700;
     margin-bottom: 5px;
   }
@@ -118,6 +118,7 @@
   .delivery-options-title {
     font-weight: 700;
     margin-bottom: 10px;
+    color:#b12704
   }
   
   .delivery-option {
@@ -130,10 +131,15 @@
   .delivery-option-input {
     margin-left: 0px;
     cursor: pointer;
+    
   }
+
+  input[type='radio'] {
+    accent-color: #017cb6;
+}
   
   .delivery-option-date {
-    color: rgb(0, 118, 0);
+    color: #0a472e;
     font-weight: 500;
     margin-bottom: 3px;
   }

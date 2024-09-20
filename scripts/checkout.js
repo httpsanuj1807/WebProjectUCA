@@ -1,4 +1,4 @@
-import { checkoutQuantityAtCenter, generateCheckoutSummaryHTML } from './checkout/orderSummary.js';
+import { checkoutQuantityAtCenter, generateCheckoutSummaryHTML, generateDeliveryOptionsHtml } from './checkout/orderSummary.js';
 
 import { generatePaymentSummary } from './checkout/paymentSummary.js';
 
@@ -7,3 +7,4 @@ import { generatePaymentSummary } from './checkout/paymentSummary.js';
 checkoutQuantityAtCenter();
 generateCheckoutSummaryHTML();
 generatePaymentSummary();
+generateDeliveryOptionsHtml();
