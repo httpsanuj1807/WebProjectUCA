@@ -5,11 +5,51 @@ import { centsToActual } from "./utils/money.js";
 
 // refresh quantity on load
 updateCartQuantity();
+searchButtonFunctionality();
 
 // generating products HTML to show products on page
 
-let html = "";
-productsData.forEach((product) => {
+function searchButtonFunctionality(){
+
+    const searchButtonElement = document.querySelector('.js-search-btn');
+    const searchInputElement = document.querySelector('.js-search-bar');
+    
+    const handleSearch = () => {
+
+        const searchQuery = searchInputElement.value.toLowerCase();
+
+        // If searchQuery is empty, show all products
+        if (searchQuery === "") {
+
+            generateProductHtml(productsData);
+
+        } else {
+            
+
+            let filteredProducts = productsData.filter((product) => {
+                return (
+                    product.name.toLowerCase().includes(searchQuery) || 
+                    product.keywords.some((keyword) => keyword.toLowerCase().includes(searchQuery))
+                );
+            });
+
+            // Render filtered products
+            generateProductHtml(filteredProducts);
+
+        }
+
+    }
+
+    searchButtonElement.addEventListener("click", handleSearch);
+    searchInputElement.addEventListener("keyup", handleSearch);
+
+}
+
+
+function generateProductHtml(productsToRender){
+
+    let html = "";
+    productsToRender.forEach((product) => {
 
     html+=`<div class="product-container">
     <div class="product-image-container">
@@ -62,51 +102,68 @@ productsData.forEach((product) => {
     </button>
     </div>`
 
-});
+    });
 
-const productsGridElement = document.querySelector('.js-products-grid');
-productsGridElement.innerHTML = html;
+    if(productsToRender.length == 0){
+        
+        html+= `<div style="width : 100vw; text-align:center; padding-top:15px;">
+            No items matched your search query. Try searching different
+        </div>`
 
+    }
+
+    const productsGridElement = document.querySelector('.js-products-grid');
+    productsGridElement.innerHTML = html;
+
+    addToCartButtons();
+
+}
 
 
 // add to cart button functionality
 
-const addToCartButtonElements = document.querySelectorAll(".js-add-to-cart-button");
 
-addToCartButtonElements.forEach((button) => {
+function addToCartButtons(){
 
-    button.addEventListener("click", () => {
+    
+    const addToCartButtonElements = document.querySelectorAll(".js-add-to-cart-button");
 
-        // get the product id of the click product
-        const productId = button.dataset.productId;
+    addToCartButtonElements.forEach((button) => {
 
-        // get the select value of the click select element using the productID
-        const selectElement = document.querySelector(`.js-select-${productId}`);
+        button.addEventListener("click", () => {
 
-        const quantity = selectElement.value;
+            // get the product id of the click product
+            const productId = button.dataset.productId;
 
-        // add 'added to cart image'
+            // get the select value of the click select element using the productID
+            const selectElement = document.querySelector(`.js-select-${productId}`);
 
-        const addImgElement = document.querySelector(`.js-added-to-cart-${productId}`);
+            const quantity = selectElement.value;
 
-        // adding class for opacity 1
+            // add 'added to cart image'
 
-        addImgElement.classList.add('js-added-to-cart');
+            const addImgElement = document.querySelector(`.js-added-to-cart-${productId}`);
 
-        // placing a timer to remove added image
+            // adding class for opacity 1
 
-        const myTimeout = setTimeout(() => {
+            addImgElement.classList.add('js-added-to-cart');
 
-            addImgElement.classList.remove('js-added-to-cart');
+            // placing a timer to remove added image
 
-        }, 2000);
+            const myTimeout = setTimeout(() => {
 
-        addToCart(productId, quantity);
-        updateCartQuantity();
+                addImgElement.classList.remove('js-added-to-cart');
+
+            }, 2000);
+
+            addToCart(productId, quantity);
+            updateCartQuantity();
+
+        });
 
     });
 
-});
+}
 
 // refresh quantity after getting it from cart 
 
@@ -117,3 +174,8 @@ function updateCartQuantity(){
     quantityElement.innerHTML = quantity;
 
 }
+
+
+
+// initial load -> Display all products
+generateProductHtml(productsData);
