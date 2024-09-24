@@ -107,7 +107,10 @@ function generateProductHtml(productsToRender){
     if(productsToRender.length == 0){
         
         html+= `<div style="width : 100vw; text-align:center; padding-top:15px;">
-            No items matched your search query. Try searching different
+          <img src="/images/icons/sorry.png" />
+        <p style="margin-top: 10px;">
+          No items matched your search query. Try searching different
+      </p>
         </div>`
 
     }
