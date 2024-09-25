@@ -2,7 +2,7 @@ import { getCartQuantity, cart } from '../cart.js';
 import productsData from '../../data/products.js';
 import { deliveryOptions } from '../../data/deliveryOptions.js';
 import { centsToActual } from '../utils/money.js';
-import { placeOrder } from '../orders.js';
+
 
 
 export function generatePaymentSummary(){
@@ -113,5 +113,29 @@ function placeOrderButton(){
 
     })
 
+
+}
+
+
+function placeOrder(cart){
+
+
+    const date = new Date();
+    const orderId = crypto.randomUUID();
+    const products = cart;
+
+    const newOrder = {
+
+        orderId,
+        date,
+        products,
+
+    }
+
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+    orders.unshift(newOrder);
+
+    localStorage.setItem("orders", JSON.stringify(orders));
 
 }

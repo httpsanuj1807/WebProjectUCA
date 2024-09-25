@@ -1,34 +1,20 @@
+import { getCartQuantity } from "./cart.js";
+
 // fetching orders from local storage if already exists
 export let orders = JSON.parse(localStorage.getItem("orders")) || [];
 
 //  if not exist then setting an empty array instead
-function saveInLocalStorage(){
 
-    localStorage.setItem("orders", JSON.stringify(orders));
+updateCartQuantity();
 
-}
+function updateCartQuantity(){
 
-
-export function placeOrder(cart){
-
-
-    const date = new Date();
-    const orderId = crypto.randomUUID();
-    const products = cart;
-
-    const newOrder = {
-
-        orderId,
-        date,
-        products,
-
-    }
-
-    orders.unshift(newOrder);
-
-    saveInLocalStorage();
+    const quantity = getCartQuantity();
+    const quantityElement = document.querySelector(".js-cart-quantity");
+    quantityElement.innerHTML = quantity;
 
 }
+
 
 function generateOrderHtml(){
 
