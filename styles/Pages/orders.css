@@ -17,6 +17,7 @@
     font-weight: 700;
     font-size: 26px;
     margin-bottom: 25px;
+    color: #0a472e
   }
   
   .orders-grid {
@@ -45,8 +46,16 @@
   
   .order-header-label {
     font-weight: 500;
+    color: #0a472e;
   }
   
+
+  .order-label-text{
+
+    font-size: 16px;
+
+  }
+
   .order-date,
   .order-total {
     margin-right: 45px;
@@ -125,6 +134,7 @@
   .product-name {
     font-weight: 700;
     margin-bottom: 5px;
+    color: #a8b324
   }
   
   .product-delivery-date {

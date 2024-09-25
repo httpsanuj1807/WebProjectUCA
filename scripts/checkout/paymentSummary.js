@@ -2,6 +2,7 @@ import { getCartQuantity, cart } from '../cart.js';
 import productsData from '../../data/products.js';
 import { deliveryOptions } from '../../data/deliveryOptions.js';
 import { centsToActual } from '../utils/money.js';
+import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 
 
 
@@ -74,7 +75,7 @@ export function generatePaymentSummary(){
 
         <div class="payment-summary-row total-row">
         <div>Order total:</div>
-        <div class="payment-summary-money">$${centsToActual(finalPrice)}</div>
+        <div class="payment-summary-money js-payment-summary-money" data-price-cents=${finalPrice}>$${centsToActual(finalPrice)}</div>
         </div>
 
         <button class="place-order-button button-primary js-place-order-button">
@@ -120,14 +121,17 @@ function placeOrderButton(){
 function placeOrder(cart){
 
 
-    const date = new Date();
+    const datePlaced = dayjs();
     const orderId = crypto.randomUUID();
     const products = cart;
+    const totalPrice = document.querySelector('.js-payment-summary-money').dataset.priceCents;
+    
 
     const newOrder = {
 
         orderId,
-        date,
+        totalPrice,
+        datePlaced,
         products,
 
     }
