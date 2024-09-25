@@ -2,6 +2,7 @@ import { getCartQuantity, cart } from '../cart.js';
 import productsData from '../../data/products.js';
 import { deliveryOptions } from '../../data/deliveryOptions.js';
 import { centsToActual } from '../utils/money.js';
+import { placeOrder } from '../orders.js';
 
 
 export function generatePaymentSummary(){
@@ -76,12 +77,41 @@ export function generatePaymentSummary(){
         <div class="payment-summary-money">$${centsToActual(finalPrice)}</div>
         </div>
 
-        <button class="place-order-button button-primary">
+        <button class="place-order-button button-primary js-place-order-button">
         Place your order
         </button>`;
 
     const paymentSummaryElement = document.querySelector(".js-payment-summary");
 
     paymentSummaryElement.innerHTML = paymentSummaryHtml;
+
+    placeOrderButton();
+
+}
+
+function placeOrderButton(){
+
+
+    const placeOrderButtonClick = document.querySelector('.js-place-order-button');
+
+    placeOrderButtonClick.addEventListener("click", () => {
+
+
+        if(!cart || cart.length == 0){
+
+            alert("Your cart is empty");
+            return;
+
+        }
+
+        placeOrder(cart);
+
+        localStorage.removeItem("cart");
+
+        window.location.href = "orders.html";
+
+
+    })
+
 
 }
