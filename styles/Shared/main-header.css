@@ -172,4 +172,39 @@
     width: 26px;
     text-align: center;
   }
+
+  @media (max-width:600px){
+
+    .orders-link {
+      width: 45px;
+    }
+
+    .returns-text {
+      font-size: 10px;
+    }
+    
+    .orders-text {
+      font-size: 12px;
+    }
+
+    .cart-link {
+      width: 20px;
+    }
+
+    .cart-text {
+      display: none;
+    }
+    
+    .cart-icon {
+      width: 20px;
+    }
+    
+    .cart-quantity {
+      font-size: 12px;
+      width: 12px;
+      top: 0px;
+    }
+
+
+  }
   

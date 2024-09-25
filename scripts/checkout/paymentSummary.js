@@ -10,6 +10,14 @@ export function generatePaymentSummary(){
 
     let count = getCartQuantity();
 
+    if(count == 0){
+
+        document.querySelector('.payment-summary').remove();
+        document.querySelector('.checkout-grid').classList.add('checkout-grid-no-item');
+        return;
+
+    }
+
     let itemsPrice = 0;
     let shippingPrice = 0;
     let totalBeforeTax = 0;
@@ -84,7 +92,7 @@ export function generatePaymentSummary(){
 
     const paymentSummaryElement = document.querySelector(".js-payment-summary");
 
-    paymentSummaryElement.innerHTML = paymentSummaryHtml;
+        paymentSummaryElement.innerHTML = paymentSummaryHtml;
 
     placeOrderButton();
 
