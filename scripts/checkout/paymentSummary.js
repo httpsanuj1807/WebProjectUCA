@@ -125,12 +125,18 @@ function placeOrderButton(){
 
 }
 
+function generateProductId(){
+
+    let orderId = Math.floor(Math.random() * 90000000) + 10000000;
+    return orderId;
+
+}
+
 
 function placeOrder(cart){
 
-
     const datePlaced = dayjs();
-    const orderId = crypto.randomUUID();
+    const orderId = generateProductId();
     const products = cart;
     const totalPrice = document.querySelector('.js-payment-summary-money').dataset.priceCents;
     

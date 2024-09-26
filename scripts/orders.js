@@ -24,6 +24,19 @@ function generateOrderHtml(){
 
     let ordersHtml = "";
 
+    if(orders.length == 0){
+
+
+        ordersHtml = `<div class="empty-cart-img">
+            <img src="./images/icons/empty-cart.png">
+          </div>
+          <a class="shop-now-btn-div" href="index.html">
+            <button class="shop-now-btn button-primary">Shop now</button>
+          </a>
+          `;
+        
+    }
+
     orders.forEach((order) => {
 
         let productsHtml = "";
